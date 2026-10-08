@@ -58,7 +58,7 @@ El objetivo de este repositorio es mantener un **control organizado de los proye
 * Django
 * Odoo
 * Git
-* GitHub
+* GitHub 
 * Visual Studio Code
 
 ## 📌 Nota
