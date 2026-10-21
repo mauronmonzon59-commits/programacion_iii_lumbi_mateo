@@ -13,7 +13,7 @@ saludar_jedi("obi-wan kwnobi")
 
 
 def mostrar_nave(nombre, combustible):
-    print(f"nave": {nombre})
+    print(f"nave: {nombre}")
     print(f"cantidad combustible : {combustible}")
 mostrar_nave("caza n-1",80)
 
@@ -25,3 +25,28 @@ def calcular_combustible(inicial, consumo):
     return(restante)
 resultado = calcular_combustible(100.25)
 print(f"combustible: {resultado}")
+
+resultado = calcular_combustible(100,35)
+print(f"combustible: {resultado}")
+
+
+def nave_preparada(combustible):
+    return combustible >=50
+
+if nave_preparada(80):
+    print("nave autorizada para desplegar")
+else:
+    print("nave necesita recarga")
+    
+
+
+
+
+
+
+
+
+
+
+
+

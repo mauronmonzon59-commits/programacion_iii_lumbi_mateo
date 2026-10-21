@@ -46,12 +46,11 @@ class RadarDragon:
 
         return encontradas, faltan
 
-# Crear el objeto del radar de Bulma
+
 radar_bulma = RadarDragon(3, 2)
 
-# Calcular las esferas encontradas y las que faltan
+
 encontradas, faltan = radar_bulma.buscar_esferas()
 
-# Mostrar los resultados
 print("Esferas encontradas:", encontradas)
 print("Esferas que faltan:", faltan)
