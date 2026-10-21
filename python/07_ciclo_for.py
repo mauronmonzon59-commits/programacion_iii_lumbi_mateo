@@ -32,4 +32,23 @@ for pais in paises:
         break
     print(f"pais visitado: {pais}")
     
-        
+jedi = {}
+
+jedi_activo = {"nombre": " obiwan",
+               "fuerza": 120,
+               "estilo_pelea": "samaurai",
+               "misiones": ["querra alderan", "secuestro palpante", "escolta de laia"],
+               "descripcion": {"estatura": 1.80, "espeie": "humana",}
+                }
+print("jedi activo")
+nave = dict(nombre="AZ-1", capacidad=8, turbo_laser=2)
+print(nave)
+
+
+
+jedi["nombre"] = "luck"
+jedi["fuerza"] = 150
+print(jedi)
+
+for calve, valor in jedi_activo.items():
+    print(f"{calve}: {valor}")
