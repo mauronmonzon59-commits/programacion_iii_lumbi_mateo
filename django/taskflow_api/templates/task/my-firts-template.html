@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing Page</title>
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts para la tipografía elegante del título -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    .font-serif-heading {
+      font-family: 'Playfair Display', serif;
+    }
+    /* Inclinación/corte en la parte inferior del fondo oscuro */
+    .hero-angled-bg {
+      clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
+    }
+    /* Patrón de puntos decorativo */
+    .dot-pattern {
+      background-image: radial-gradient(rgba(255, 255, 255, 0.4) 1.5px, transparent 1.5px);
+      background-size: 12px 12px;
+    }
+  </style>
+</head>
+<body class="bg-white text-slate-800 antialiased">
+
+  <!-- Sección Hero Principal -->
+  <div class="hero-angled-bg bg-[#0f1d33] text-white pt-6 pb-28 md:pb-36 px-6 md:px-16 lg:px-24 min-h-[600px] relative">
+    
+    <!-- Barra de Navegación -->
+    <header class="max-w-7xl mx-auto flex items-center justify-between py-4">
+      <!-- Logo -->
+      <div class="flex items-center space-x-3">
+        <div class="w-8 h-8 rounded-full border-2 border-white/80 flex items-center justify-center p-1">
+          <svg class="w-full h-full text-white fill-current" viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+          </svg>
+        </div>
+        <span class="font-semibold text-lg tracking-wide">Logo</span>
+      </div>
+
+      <!-- Menú de Navegación -->
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+        <a href="#" class="text-sky-400 font-semibold border-b-2 border-sky-400 pb-0.5">Accueil</a>
+        <a href="#" class="text-slate-300 hover:text-white transition">Projets</a>
+        <a href="#" class="text-slate-300 hover:text-white transition">Services</a>
+        <a href="#" class="text-slate-300 hover:text-white transition">Contactez-nous</a>
+      </nav>
+
+      <!-- Botón Call to Action -->
+      <div>
+        <a href="#" class="bg-[#0084ff] hover:bg-blue-600 text-white font-medium text-sm px-5 py-2.5 rounded-md shadow-md transition duration-200">
+          Demandez un devis
+        </a>
+      </div>
+    </header>
+
+    <!-- Contenido Principal (Texto e Imagen) -->
+    <main class="max-w-7xl mx-auto mt-12 md:mt-20 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      
+      <!-- Columna Izquierda: Texto -->
+      <div class="lg:col-span-6 space-y-6">
+        <h1 class="font-serif-heading text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-tight">
+          Lorem ipsum dolor sit amet
+        </h1>
+        <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-xl">
+          Donec eleifend turpis non nunc suscipit varius. Integer aliquam a felis et consectetur. Maecenas purus risus, fermentum ut elementum nec, dapibus sit amet neque.
+        </p>
+      </div>
+
+      <!-- Columna Derecha: Imagen con elementos decorativos -->
+      <div class="lg:col-span-6 flex justify-center lg:justify-end relative">
+        <div class="relative w-full max-w-lg">
+          
+          <!-- Patrón de puntos superior derecho -->
+          <div class="absolute -top-8 -right-8 w-32 h-20 dot-pattern z-0 hidden sm:block"></div>
+          
+          <!-- Patrón de puntos inferior izquierdo -->
+          <div class="absolute -bottom-6 -left-8 w-20 h-24 dot-pattern z-0 hidden sm:block"></div>
+
+          <!-- Marco de la imagen -->
+          <div class="relative z-10 rounded-lg overflow-hidden shadow-2xl border-2 border-white/10">
+            <img 
+              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1000&q=80" 
+              alt="Equipo de trabajo en reunión con laptop" 
+              class="w-full h-auto object-cover aspect-[4/3]"
+            />
+          </div>
+
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+</body>
+</html>
