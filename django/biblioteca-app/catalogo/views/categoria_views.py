@@ -1,0 +1,62 @@
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required, permission_required
+from django.shortcuts import get_object_or_404, redirect, render
+
+from catalogo.forms.categoria_form import CategoriaForm
+from catalogo.models import Categoria
+
+
+@login_required
+@permission_required('catalogo.view_categoria', raise_exception=True)
+def categoria_list(request):
+    categorias = Categoria.objects.all()
+    return render(request, 'catalogo/categoria_list.html', {'categorias': categorias})
+
+    return render(request, 'categorias/categoria_list.html', {'categorias': categorias})
+
+@login_required
+@permission_required('catalogo.add_categoria', raise_exception=True)
+def categoria_create(request):
+    if request.method == 'POST':
+        form = CategoriaForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Categoría creada exitosamente.')
+            return redirect('categoria_list')
+    else:
+        form = CategoriaForm()
+    return render(request, 'catalogo/formulario.html', {'form': form})
+
+    return render(request, 'categorias/formulario.html', {'form': form})
+
+@login_required
+@permission_required('catalogo.change_categoria', raise_exception=True)
+def categoria_update(request, pk):
+    categoria = get_object_or_404(Categoria, pk=pk)
+    if request.method == 'POST':
+        form = CategoriaForm(request.POST, instance=categoria)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Categoría actualizada exitosamente.')
+            return redirect('categoria_list')
+    else:
+        form = CategoriaForm(instance=categoria)
+    return render(request, 'catalogo/formulario.html', {'form': form})
+    return render(request, 'categorias/formulario.html', {'form': form})
+
+
+@login_required
+@permission_required('catalogo.delete_categoria', raise_exception=True)
+def categoria_delete(request, pk):
+    categoria = get_object_or_404(Categoria, pk=pk)
+    if request.method == 'POST':
+        categoria.delete()
+        messages.success(request, 'Categoría eliminada exitosamente.')
+        return redirect('categoria_list')
+    return render(
+        request,
+        'catalogo/categoria_confirm_delete.html',
+        'categorias/categoria_confirm_delete.html',
+        {'categoria': categoria},
+    )
+    
