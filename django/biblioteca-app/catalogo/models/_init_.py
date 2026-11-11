@@ -1,1 +1,0 @@
-from.categorias import Categoria
