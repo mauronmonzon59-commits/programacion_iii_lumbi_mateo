@@ -1,9 +1,11 @@
-from django.contrib.auth.views import LoginView, LogoutView
+from django.urls import path
 
-class BibliotecaLoginView(LoginView):
-    template_name = 'catalogo/authentication/login.html'
-    redirect_authenticated_user = True
+from catalogo.views.authentication_views import (
+    BibliotecaLoginView,
+    BibliotecaLogoutView,
+)
 
-class BibliotecaLogoutView(LogoutView):
-    template_name = 'catalogo/authentication/logout.html'
-    next_page = 'login'
+urlpatterns = [
+    path('login/', BibliotecaLoginView.as_view(), name='login'),
+    path('logout/', BibliotecaLogoutView.as_view(), name='logout'),
+]
